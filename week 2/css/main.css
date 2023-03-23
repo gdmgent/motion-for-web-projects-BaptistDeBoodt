@@ -1,0 +1,205 @@
+h1,p {
+    font-family: Bebas Neue;
+}
+
+p {
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-family: Space Grotesk;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*header*/
+header {
+    height: 10rem;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    background-image: url(../images/versace-medusa.svg);
+    height: 7rem;
+    width: 7rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 6rem;
+    transition: ease 1s;
+}
+
+.logo:hover {
+    transform: scale(1.2, 1.2) rotate(0.1turn);
+    transition: ease 1s;
+}
+
+
+/*main*/
+.main-bg {
+    background-image: linear-gradient(to bottom, hsl(0, 0%, 100%),  hsl(36, 100%, 90%));
+    width: 100%;
+    height: 210%;
+}
+
+.model {
+    background-image: url(../images/side\ photo.jpg);
+    background-position-y: -5rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 0 100%;
+    height: 38rem;
+    opacity: 0.5;
+    margin-bottom: 5rem;
+    transition: ease, 1s;
+}
+
+.model:hover {
+    opacity: 1;
+}
+
+.body-text {
+    text-align: center;
+    margin-bottom: 4rem;
+    font-size: 2.5rem;
+    color: black;
+    animation: glow 5s infinite linear;
+}
+
+.mini-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.card {
+    height: 20rem;
+    width: 15rem;
+    text-align: center;
+    transition: ease 0.3s;
+    position: relative;    
+    color: black;
+    margin: 0.5rem;
+}
+
+.card:hover {
+    transform: scale(1.2, 1.2);
+    background-color: black;
+    color: white;
+}
+
+.price-card {
+    background-color: pink;
+    opacity: 0.9;
+    padding: 0.5rem;
+    width: 4rem;
+    font-family: Space Grotesk;
+    font-size: 0.8rem;
+    color: black;
+    position: absolute;
+    top: 0;
+    right: -1rem;
+    animation: rotation 3s infinite linear;
+}
+
+.card-title{
+    padding: 1rem;
+    transition: all .2s ease;
+}
+.card:hover .card-title {
+    background-color: black;
+}
+
+
+/*bottom*/
+.footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bottom-text {
+    background-color: black;
+    color: black;
+    width: 50vw;
+    padding: 8rem;
+    transition: ease 0.5s;
+    font-size: 1.2rem;
+}
+
+.medusa {
+    background-image: url(../images/bottom\ versaci.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left;
+    width: 100vw;
+    z-index: -1;
+}
+
+.footer:hover .bottom-text {
+    color: purple;
+    transition: ease .75s;
+}
+
+/*second page*/
+.container {
+    height: 90%;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.music {
+    background-image: url(../images/versace-medusa.svg);
+    height: 70rem;
+    width: 70rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 50rem;
+    animation: turn 5s infinite linear;
+}
+
+@keyframes rotation {
+    0% {
+      transform: rotate(10deg);
+    }
+    25% {
+      transform: rotate(30deg);
+    }
+
+    50% {
+        transform: rotate(10deg);
+    }
+
+    75% {
+        transform: rotate(30deg);
+    }
+
+    100% {
+        transform: rotate(10deg);
+    }
+  }
+
+@keyframes glow {
+    0%, 100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes turn {
+    0%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}
