@@ -16,10 +16,10 @@ a {
 
 /*header*/
 header {
-    height: 10rem;
-    width: auto;
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-rows: 10rem;
+    grid-template-columns: 1fr;
+    justify-items: center;
     align-items: center;
 }
 
@@ -28,7 +28,6 @@ header {
     height: 7rem;
     width: 7rem;
     background-size: contain;
-    background-repeat: no-repeat;
     border-radius: 6rem;
     transition: ease 1s;
 }
@@ -43,19 +42,18 @@ header {
 .main-bg {
     background-image: linear-gradient(to bottom, hsl(0, 0%, 100%),  hsl(36, 100%, 90%));
     width: 100%;
-    height: 210%;
+    min-height: 200%;
+    padding-bottom: 10rem;
 }
 
 .model {
     background-image: url(../images/side\ photo.jpg);
     background-position-y: -5rem;
     background-size: cover;
-    background-repeat: no-repeat;
-    width: 0 100%;
     height: 38rem;
     opacity: 0.5;
-    margin-bottom: 5rem;
     transition: ease, 1s;
+    background-repeat: no-repeat;
 }
 
 .model:hover {
@@ -64,25 +62,29 @@ header {
 
 .body-text {
     text-align: center;
-    margin-bottom: 4rem;
+    margin: 5rem 0;
     font-size: 2.5rem;
     color: black;
     animation: glow 5s infinite linear;
+    padding: 0 2rem;
 }
 
 .mini-container {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-rows: 20rem;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    justify-items: center;
+    align-items: center;
+    grid-gap: 10rem 3rem;
+    padding: 0 3rem;
 }
 .card {
     height: 20rem;
-    width: 15rem;
+    max-width: 15rem;
     text-align: center;
     transition: ease 0.3s;
     position: relative;    
     color: black;
-    margin: 0.5rem;
 }
 
 .card:hover {
@@ -109,24 +111,27 @@ header {
     padding: 1rem;
     transition: all .2s ease;
 }
+
 .card:hover .card-title {
     background-color: black;
 }
 
 
 /*bottom*/
-.footer {
-    display: flex;
-    justify-content: space-between;
+footer {
+    display: grid;
+    grid-template-rows: 25rem;
+    grid-template-columns: 2fr 3fr;
+    background-color: black;
 }
 
 .bottom-text {
-    background-color: black;
     color: black;
-    width: 50vw;
-    padding: 8rem;
+    width: 60%;
     transition: ease 0.5s;
     font-size: 1.2rem;
+    justify-self: end;
+    align-self: center;
 }
 
 .medusa {
@@ -134,29 +139,28 @@ header {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: left;
-    width: 100vw;
-    z-index: -1;
+    width: 100%;
+    height: 25rem;
 }
 
-.footer:hover .bottom-text {
+footer:hover .bottom-text {
     color: purple;
     transition: ease .75s;
 }
 
 /*second page*/
 .container {
-    height: 90%;
-    width: auto;
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-rows: 8fr 2fr;
+    grid-template-columns: 1fr;
+    justify-items: center;
     align-items: center;
-    flex-direction: column;
 }
 
 .music {
     background-image: url(../images/versace-medusa.svg);
-    height: 70rem;
-    width: 70rem;
+    height: 35rem;
+    width: 35rem;
     background-size: contain;
     background-repeat: no-repeat;
     border-radius: 50rem;
@@ -201,5 +205,41 @@ header {
 
     100%{
         transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width: 60rem)  {
+    .bottom-text, .medusa {
+        display: none;
+    }
+
+    .footer {
+        background-color: white;
+        background-image: url(../images/versace-medusa.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+    }
+
+    .model {
+        background-position: center center;
+    }
+    
+    .music {
+        height: 15rem;
+        width: 15rem;
+        background-position: center center;
+    }
+
+    .container {
+        grid-template-rows: 100vh;
+    }
+
+    audio {
+        display: none;
+    }
+
+    .body-text {
+        font-size: 1.5rem;
     }
 }
